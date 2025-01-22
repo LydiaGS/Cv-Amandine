@@ -1,10 +1,6 @@
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('.navbar');
-const navbg = document.querySelector('.nav-bg');
+const menuIcon = document.getElementById("menu-icon");
+const navbar = document.querySelector(".navbar");
 
-menuIcon.addEventListener('click', () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-    navbg.classList.toggle('active');
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
 });
-
