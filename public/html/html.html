@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cours.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Document</title>
 </head>
 <body>
@@ -21,5 +22,97 @@
         </nav>
     </header>
     <h1 style="color: white;">HTML</h1>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Amandine Letellier. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+const navbar = document.querySelector(".navbar");
+
+menuIcon.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const tl = gsap.timeline();
+  const splitText = new SplitText(".main-word", {
+    type: "chars",
+    charsClass: "char++",
+  });
+
+  // Afficher le conteneur
+  tl.set(".word-box", { autoAlpha: 1 });
+
+  // Rétrécir les lignes
+  tl.to(".top-line", { scaleY: 0.08, top: "35%", duration: 0.75 }, "u");
+  tl.to(".bottom-line", { scaleY: 0.08, top: "42%", duration: 0.75 }, "u");
+
+  // Animer les lettres spécifiques
+  tl.fromTo(
+    ".char1",
+    { x: 70, opacity: 0, rotate: "90deg" },
+    { x: 0, opacity: 1, rotate: "0deg", ease: "back.inOut(2)", duration: 1 },
+    "u"
+  );
+
+  tl.fromTo(
+    ".char5",
+    { x: -40, y: -10, rotate: -90 },
+    { x: 0, y: 0, rotate: 0, ease: "back.inOut(2)", duration: 1 },
+    "u"
+  );
+
+  tl.fromTo(
+    ".char7",
+    { x: -40, opacity: 0, rotate: "-90deg" },
+    { x: 0, opacity: 1, rotate: "0deg", ease: "back.inOut(2)", duration: 1 },
+    "u"
+  );
+
+  // Étendre les lignes
+  tl.to(".top-line", { width: "100%", left: "0%", duration: 0.75 }, "expand");
+  tl.to(".bottom-line", { width: "100%", right: "0%", duration: 0.75 }, "expand");
+
+  // Animer les autres lettres
+  tl.from(
+    ".char2, .char3, .char4, .char6, .char8",
+    {
+      x: -25,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.08,
+      ease: "back.out(1.7)",
+    },
+    "-=0.75"
+  );
+
+  // Incliner le conteneur
+  tl.to(".word-box", { rotate: "90deg", duration: 2, ease: "back.inOut(3)" });
+
+  // Faire tomber les lettres
+  tl.to(
+    splitText.chars,
+    {
+      x: 250,
+      opacity: 0,
+      rotate: "180deg",
+      duration: 0.75,
+      ease: "back.in(0.3)",
+      stagger: "-0.15",
+    },
+    "-=1.52"
+  );
+
+  // Faire tomber les lignes
+  tl.to(
+    ".top-line, .bottom-line",
+    { x: 250, opacity: 0, ease: "back.in(0.95)", stagger: 0.08 },
+    "-=0.35"
+  );
+});
+
+    </script>
+    <script href="./public/javascripts/scripts.js"></script>
 </body>
 </html>
