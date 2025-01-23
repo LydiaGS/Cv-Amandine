@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -300,3 +301,117 @@
     padding-top: 10px;
     width: 100%;
     }
+    /* Sections */
+.home-section, .about-section, .cards-section {
+    padding: 50px 100px;
+    color: #fff;
+    text-align: center;
+}
+
+.home-section h1 {
+    font-size: 36px;
+}
+
+.about-section, .cards-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.cards-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.cards-section li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+/* Section Code Example */
+.code-example {
+    padding: 50px 100px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.code-example h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #f1c7c7; /* Couleur douce pour les titres */
+}
+
+.code-example p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f1c7c7; /* Couleur douce pour le message */
+}
+
+/* Code block for displaying code */
+pre {
+    background-color: #2e3a46;
+    color: #f1f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 30px;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .code-example {
+        padding: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+
+    #message {
+        font-size: 16px;
+    }
+
+    pre {
+        padding: 10px;
+    }
+}
+/* Style de l'image responsive */
+img {
+    max-width: 100%;   /* L'image ne dépassera pas la largeur de son conteneur */
+    height: auto;      /* La hauteur est ajustée automatiquement pour maintenir les proportions */
+    display: block;    /* Supprime les marges indésirables autour de l'image */
+    margin: 0 auto;    /* Centre l'image horizontalement */
+}
+

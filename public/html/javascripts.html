@@ -22,11 +22,45 @@
         </nav>
     </header>
     <div><h1 style="color: white;">Javascripts</h1></div>
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Amandine Letellier. Tous droits réservés.</p>
-        </div>
-    </footer>
+    <section id="home-section" class="home-section">
+        <h1>Bienvenue au cours JavaScript</h1>
+        <p>Apprenez à ajouter de l'interactivité à vos pages web en utilisant JavaScript, le langage de programmation des sites dynamiques.</p>
+    </section>
+
+    <section id="about-section" class="about-section">
+        <h2>À propos du cours</h2>
+        <p>Ce cours vous aidera à maîtriser JavaScript, un langage essentiel pour rendre vos pages web interactives et dynamiques. Vous apprendrez comment manipuler les éléments du DOM, les événements et bien plus encore.</p>
+    </section>
+
+    <sectios id="cards-section" class="cards-section">
+        <h2>Objectifs du cours</h2>
+        <ul>
+            <li>Comprendre les bases du langage JavaScript.</li>
+            <li>Manipuler le DOM (Document Object Model) pour interagir avec la page web.</li>
+            <li>Travailler avec des événements utilisateurs (clics, saisie de texte, etc.).</li>
+            <li>Utiliser les fonctions et les boucles pour automatiser des tâches.</li>
+        </ul>
+    </section>
+<br>
+    <section id="code-example" class="code-example">
+        <h2>Exemple de Code JavaScript</h2>
+         <!-- Code JavaScript à afficher -->
+        <p>Voici un exemple simple de code JavaScript qui affiche un message lorsqu'on clique sur un bouton :</p> <br>
+        <pre><code>
+            // JavaScript pour afficher un message au clic sur le bouton
+            document.getElementById('clickButton').addEventListener('click', function() {
+                document.getElementById('message').innerText = 'Bravo, vous avez cliqué sur le bouton !';
+            });
+        </code></pre>
+        <button id="clickButton">Cliquez-moi</button>
+        <p id="message"></p>
+        <script>
+            // JavaScript pour afficher un message au clic sur le bouton
+            document.getElementById('clickButton').addEventListener('click', function() {
+                document.getElementById('message').innerText = 'Bravo, vous avez cliqué sur le bouton !';
+            });
+        </script>
+    </section>
     <script>
         const menuIcon = document.getElementById("menu-icon");
 const navbar = document.querySelector(".navbar");
