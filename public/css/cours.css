@@ -305,7 +305,7 @@
 .home-section, .about-section, .cards-section {
     padding: 50px 100px;
     color: #fff;
-    text-align: center;
+    text-align: left;
 }
 
 .home-section h1 {
