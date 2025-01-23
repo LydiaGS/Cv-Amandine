@@ -3,764 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amandine letellier CV</title>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.core.min.js"></script>
+    <link rel="stylesheet" href="./public/css/index.css">
+    <title>Document</title>
 </head>
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    }
-    
-    body {
-    display: grid;
-    grid-template-rows: auto 1fr auto; /* header, main, footer */
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer";
-    min-height: 100vh; /* Assure que la page couvre toute la hauteur de l'écran */
-    background: url('https://i.postimg.cc/XYjWrv36/dark-hexagonal-background-with-gradient-color-79603-1409.jpg') no-repeat center;
-    background-size: cover;
-    overflow-x: hidden; /* Empêche le défilement horizontal */
-    }
-    
-    /* Header */
-    .header {
-    grid-area: header;
-    position: sticky; /* Toujours en haut */
-    top: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    z-index: 100;
-    }
-    
-    .header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: 0.5s;
-    }
-    
-    .header:hover::before {
-    left: 100%;
-    }
-    
-    .logo {
-    color: #fff;
-    font-size: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: default;
-    }
-    
-    /* Menu responsive */
-    #menu-icon {
-        display: none;
-        cursor: pointer;
-    }
-    
-    .navbar {
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        transition: all 0.3s ease;
-    }
-    
-    .navbar a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 18px;
-        transition: color 0.3s;
-    }
-    
-    .navbar a:hover {
-        color: #f1c7c7;
-    }
-    
-    /* Responsive styles */
-    @media screen and (max-width: 768px) {
-        .navbar {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-    
-        .navbar.active {
-            display: flex;
-        }
-    
-        #menu-icon {
-            display: block;
-            font-size: 28px;
-            color: #fff;
-            z-index: 100;
-        }
-    }
-    
-    /* Section Header */
-    .header {
-    grid-area: header;
-    position: sticky;
-    top: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    z-index: 100;
-    }
-    
-    /* Section Main */
-    .main {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    color: white;
-    }
-    .footer {
-    grid-area: footer;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    padding: 20px 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(10px);
-    }
-    
-    .footer-content {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    }
-    
-    .footer-section {
-    flex: 1;
-    min-width: 200px;
-    }
-    
-    .footer-section h2,
-    .footer-section h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #f00;
-    }
-    
-    .footer-section p,
-    .footer-section a {
-    color: #fff;
-    font-size: 16px;
-    text-decoration: none;
-    }
-    
-    .footer-section a:hover {
-    color: #f00;
-    text-decoration: underline;
-    }
-    
-    .footer-section ul {
-    list-style: none;
-    padding: 0;
-    }
-    
-    .footer-section ul li {
-    margin: 10px 0;
-    }
-    
-    .footer-section ul li a {
-    text-decoration: none;
-    transition: 0.3s;
-    }
-    
-    .footer-bottom {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 10px;
-    width: 100%;
-    }
-    /* Section des cartes */
-    .cards-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    margin: 20px auto;
-    max-width: 1200px;
-    }
-    
-    .card {
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-    
-    .card h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #fff;
-    }
-    
-    .card p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    }
-    
-    .card .button {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-    }
-    
-    .card .button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    }
-    /* Section Home */
-    #home-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    margin-bottom: 40px;
-    border-radius: 10px;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    #home-section h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #f1c7c7;
-    }
-    
-    .home-section p {
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 10px 0;
-    }
-    
-    #home-section .button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.1);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-    }
-    
-    #home-section .button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    }
-    /* Section About */
-    #about-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    margin-bottom: 40px;
-    border-radius: 10px;
-    color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    #about-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    gap: 40px;
-    justify-content: center;
-    align-items: center;
-    }
-    
-    .about-image img {
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    
-    .about-text {
-    max-width: 600px;
-    flex: 1;
-    }
-    
-    .about-text h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #f1c7c7;
-    }
-    
-    .about-text p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    }
-    /* Section Contact */
-    #contact-section {
-    padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    text-align: center;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    .contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    }
-    
-    #contact-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #f1c7c7;
-    }
-    
-    #contact-section p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    line-height: 1.6;
-    }
-    
-    .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    }
-    
-    .form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    }
-    
-    .form-group label {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: #fff;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-    width: 100%;
-    padding: 12px 15px;
-    font-size: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    outline: none;
-    transition: border 0.3s ease;
-    }
-    
-    .form-group input:focus,
-    .form-group textarea:focus {
-    border: 1px solid #f00;
-    }
-    
-    .button {
-    background: rgba(0, 0, 0, 0.1);
-    color: #fff;
-    padding: 12px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    }
-    
-    .button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    }
-    /* Section Portfolio */
-    #portfolio-section {
-    padding: 60px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    text-align: center;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    .portfolio-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    }
-    
-    #portfolio-section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #f00;
-    }
-    
-    #portfolio-section p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    line-height: 1.6;
-    }
-    
-    .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    }
-    
-    .portfolio-item {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    }
-    
-    .portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-    }
-    
-    .portfolio-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    }
-    
-    .portfolio-item h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #fff;
-    }
-    
-    .portfolio-item p {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: #ddd;
-    }
-    
-    .portfolio-item .button {
-    background: #f00;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.3s ease;
-    }
-    
-    .portfolio-item .button:hover {
-    background: #ff4d4d;
-    }
-    /* Responsive Design */
-    @media (max-width: 768px) {
-    body {
-        padding: 0 10px;
-    }
-    
-    .header {
-        padding: 10px 20px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .navbar a {
-        margin-left: 20px;
-        font-size: 16px;
-    }
-    
-    #menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-    
-    .cards-section {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .card {
-        width: 90%;
-    }
-    
-    .about-section {
-        flex-direction: column;
-        padding: 20px;
-    }
-    
-    .about-image img {
-        max-width: 100%;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-    }
-    
-    @media (max-width: 480px) {
-    .header {
-        padding: 10px;
-    }
-    
-    .navbar a {
-        margin-left: 10px;
-        font-size: 14px;
-    }
-    
-    #home-section h1 {
-        font-size: 28px;
-    }
-    
-    #home-section p {
-        font-size: 16px;
-    }
-    
-    .portfolio-item h3 {
-        font-size: 18px;
-    }
-    
-    .portfolio-item p {
-        font-size: 14px;
-    }
-    }
-
-
-    </style>
-   <header class="header">
-    <a href="#" class="logo">Amandine Letellier</a>
-    <i class='bx bx-menu' id="menu-icon"></i>
-    <nav class="navbar">
-        <a href="#home-section">Accueil</a>
-        <a href="#about-section">À propos de moi</a>
-        <a href="#cards-section">Compétences & Expériences</a>
-        <a href="#portfolio-section">Projets</a>
-        <a href="#contact-section">Contact</a> <!-- Correction ici -->
-    </nav>
-</header>
-    <main class="main">
-               <!-- Section Home -->
-               <section id="home-section"id="home-section">
-                <div class="home-content">
-                    <h1>Bienvenue !</h1>
-                    <p>
-                        Je suis Amandine Letellier, Animatrice multimédia & créative.
-                        J'apprends aux enfants et aux jeunes la programmation, l'éléctronique 
-                        en concevant des activitées interactifs pour eux.
-                    </p>
-                    <p>
-                        Passioner par le jeux  vidéo, j'apporte une expérience particulière aux enfants,
-                         à l'expérience de la programmation jusqu'à la création d'un robot.
-                    </p>
-                </div>
-            </section>
-            <!-- Section About -->
-    <section id="about-section" id="portfolio">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="./public/image/IMG_0344-removebg-preview.png" alt="Image de Amandine Letellier">
-            </div>
-            <div class="about-text">
-                <h2>À propos de moi</h2>
-                <p>
-                    Avec de l'expérience dans la programmation, j'ai travaillé sur divers projets allant 
-                    de la création de fiche pédagogiquez pour enfant sur la programmation à des Robots sonar qui évite les obstacles . Mon objectif principal est de 
-                   est de fomrer les enfants et les jeunes à la programmation de manière ludique avec des idées en expériences numériques captivantes.
-                </p>
-                <p>
-                    Je maîtrise Micro:bit, scratch, arduinio, l'éléctronqiue,... j'ai également la maîtrise de HTMl & CSS javascripts. Ayant fait plusieurs projets avec différents groupe d'âge j'ai une capapcité à m'adapter facilement. 
-                <p>
-                    En dehors du travail, je suis passionnée par la programmation et le devloppement web, la pâtisserie et les jeux vidéo tel que minecraft, No min's skin, hogawrts légacy, stardew Valley, ...  
-                    Ces intérêts enrichissent ma créativité et mon approche 
-                    dans mes projets professionnels.
-                </p>
-            </div>
-        </div>
-    </section>
-        <section id="cards-section">
-            <div class="card">
-                <img src="" alt="">
-                <h2>Formation & étude</h2>
-                <p>
-                <ul>
-                <li>Services Sociaux - Institut Reine Fabiola</li> <br>
-                <li>Web dévloppeur - Molengeek</li><br>
-                <li>Animatrice - Latitude Jeune du Brabant</li><br>
-                <li> Validation de compétences médiateur numérique - liège</li><br>
-                </ul>
-            </p>
-            </div><br>
-            <div class="card">
-                <h2>Expériences</h2>
-                <p>
-                    <ul>
-                        <li>juillet 2017 - Action sport-Promosport - Bruxelles-Woluwé-Saint-Pierre</li><br>
-                        <li>juillet 2020 - Tobbogan Imagine - Wezembeek-Oppem</li><br>
-                        <li>septembre 2018 - Maison jeune la “J” - Bruxelles-Molenbeek </li><br>
-                        <li> Août 2022 - Update ASBL - cours HTML & CSS - Bruxelles-Louise</li><br>
-                        <li> Octobre 2023 - Maks VZW - Animateuir multimédia
-                            (programmation) - Bruxelles-Anderlecht</li><br>
-                    </ul>
-                </p>
-            </div><br>
-            <div class="card">
-                <h2>Compétences</h2>
-                <p>
-                    <ul>
-                        <li>Word</li><br>
-                        <li>InDesgin</li><br>
-                        <li>HTML,CSS & Javascripts</li><br>
-                        <li>Micro:bit arduino, scratch, minecraft, Robotique,...</li><br>
-                    </ul>
-                </p> 
-            </div><br>
-            <div class="card">
-                <h2>Langues</h2>
-                <p>
-                    <ul>
-                        <li>Français - Langue maternelle</li><br>
-                        <li>Anglais - basique</li><br>
-                        <li>Néerlandais - basique</li><br>
-                    </ul>
-                </p>
-            </div><br>
-        </section>
-        <!-- Section Portfolio -->
-<section id="portfolio-section" id="portfolio">
-    <div class="portfolio-container">
-        <h2>Projets</h2>
-        <p>Découvrez mes projets récents et mes réalisations professionnelles.</p>
-        <div class="portfolio-grid">
-            <!-- Project 1 -->
-            <div class="portfolio-item">
-                <img src="./public/image/Capture d'écran 2024-09-03 111827.png" alt="Project 1">
-                <h3>Robot sonar</h3>
-                <p>Robot qui évite les obstacles.</p>
-                <a href="#" class="button" target="_blank">Voir le projet</a>
-            </div>
-            <!-- Project 2 -->
-            <div class="portfolio-item">
-                <img src="./public/image/Capture d'écran 2024-09-02 145047.png" alt="Project 2">
-                <h3>Robot voiture</h3>
-                <p>Une voiture avec des phares leds qui avance grace à une télécommande.</p>
-                <a href="./public/fichiers/robot voiture.pdf" class="button" target="_blank">Voir le projet</a>
-            </div>
-            <!-- Project 3 -->
-            <div class="portfolio-item">
-                <img src="./public/image/mincraft.jpg" alt="Project 3">
-                <h3>Minecraft</h3>
-                <p>Apprendre la programmation toute en jouant aux jeux vidéo</p>
-                <a href="#" class="button" target="_blank">Voir le projet</a>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
+    <h1>
+        <span>H</span>
+        <span>E</span>
+        <span>L</span>
+        <span>L</span>
+        <span>O</span>
+        <span>!</span>
+      </h1>
+    <canvas id="glCanvas"></canvas>
+  <a href="./public/html/page1.html" id="collectionLink" target="_blank">Mon CV Amandine Letellier</a>
+  <div id="creatorText"></div>
+  <div id="loadingScreen">
+    <div id="loadingText">LOADING</div>
+    <div id="progressBar">
+      <div id="progressFill"></div>
     </div>
-</section>
-        <!-- Section Contact -->
-<section id="contact-section" id="contact">
-    <div class="contact-container">
-        <h2>Contactez-moi</h2>
-        <p>
-         N'hésitez pas à me contacter si mon profil vous intéresse.
-        </p>
-        <form action="#" method="post" class="contact-form">
-            <div class="form-group">
-                <label for="name">Nom:</label>
-                <input type="text" id="name" name="name" placeholder="Amandine Letellier" required>
-            </div>
-            <div class="form-group">
-                <label for="email">email:</label>
-                <input type="email" id="email" name="email" placeholder="letellier.ama@gmail.com" required>
-            </div>
-            <div class="form-group">
-                <label for="message">n° de téléphone:</label>
-                <textarea id="message" name="message" rows="5" placeholder="+32472985832" required></textarea>
-            </div>
-            <!--<button type="submit" class="button">Envoyer</button>-->
-        </form>
+  </div>
+  <div id="title">Amandine cv</div>
+  <div id="scrollingContainer">
+    <div id="scrollingText">
     </div>
-</section>
-    </main>
+  </div>
+  <div id="mirrorContainer">
+    <div id="mirrorText">
+    </div>
+  </div>
+  <script>
+    const {
+  assign
+} = Object
+const lets = '!@#%?&*()'.split``
 
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 Amandine Letellier. Tous droits réservés.</p>
-        </div>
-    </footer>
-    <script>
-        const menuIcon = document.getElementById("menu-icon");
-const navbar = document.querySelector(".navbar");
+function letter() {
+  let c = Math.random() * 155
+  const el = assign(
+    document.createElement`div`, {
+      innerHTML: lets[~~(Math.random() * lets.length)],
+      style: `
+      position: absolute;
+      font-family: Helvetica;
+      color: rgb(${c}, ${c}, ${c})
+    `
+    })
+  document.body.append(el)
+  el.x = innerWidth/ 2
+  el.y = innerHeight / 2
+  el.s = Math.random() * 10 + .3
+  el.vy = Math.random() * 3 + .1
+  el.r = Math.random() * 360
+  el.ri = Math.random() * 10 - 5
+  el.vx = 0
+  if (Math.abs(el.ri) < 1) el.ri = 1
+  const o = {
+    el,
+    run() {
+      el.r += el.ri
+      assign(el.style, {
+        rotate: el.r + 'deg',
+        scale: el.s,
+        translate: `${el.x}px ${el.y}px`
+      })
 
-menuIcon.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-});
+      for (let i = 0; i < NUM; i++) {
+        const l = letters[i]
+        if (l[i] != o) {
+          let dx = el.x - l.el.x
+          let dy = el.y - l.el.y
+          const d = Math.sqrt(dx ** 2 + dy ** 2)
 
-    </script>
-    <script href="./public/javascripts/scripts.js"></script>
+          if (d < 100 * el.s / 4) {
+            let ang = Math.atan2(dy, dx)
+            el.vx += .02 * Math.cos(ang);
+            el.vy += .02 * Math.sin(ang);
+            l.el.vx += .02 * Math.cos(-ang);
+            l.el.vy += .02 * Math.sin(-ang);
+          }
+        }
+      }
+      // el.vy += 1;
+      el.vx *= .98
+      el.vy *= .98
+      //if (el.vx > 0) el.vx *= .9
+
+      el.y += el.vy
+      el.x += el.vx
+
+      if (el.x > innerWidth + 200) {
+        el.x = -100
+      }
+      if (el.y < -200) {
+        el.y = innerHeight + 100
+      }
+      if (el.y > innerHeight + 100) {
+        el.y = -100
+      }
+    }
+  }
+  return o
+}
+const NUM = 100
+let letters = []
+for (let i = 0; i < NUM; i++) {
+  letters[i] = letter()
+}
+
+function loop() {
+  for (let i = 0; i < NUM; i++) {
+    letters[i].run()
+  }
+  requestAnimationFrame(loop)
+}
+loop() 
+  </script>
 </body>
 </html>

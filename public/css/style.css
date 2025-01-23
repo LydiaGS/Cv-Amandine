@@ -529,7 +529,8 @@
         cursor: pointer;
     }
     
-    .cards-section {
+    #cards-section {
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }
@@ -538,7 +539,7 @@
         width: 90%;
     }
     
-    .about-section {
+    #about-section {
         flex-direction: column;
         padding: 20px;
     }
@@ -578,4 +579,36 @@
         font-size: 14px;
     }
     }
-
+/*animation*/
+.word-box {
+    display: flex;
+    width: auto;
+    position: relative;
+    padding: 2rem 0.75rem;
+    visibility: visible; /* Modifié pour afficher la boîte */
+  }
+  
+  .main-word {
+    font-size: 50px;
+    font-weight: 400;
+  }
+  
+  .top-line {
+    position: absolute;
+    transform-origin: top;
+    height: 45px;
+    width: 3px;
+    background-color: #f1f5f9;
+    left: 1rem;
+    top: 40%;
+  }
+  
+  .bottom-line {
+    position: absolute;
+    transform-origin: bottom;
+    height: 45px;
+    width: 3px;
+    background-color: #f1f5f9;
+    right: 1rem;
+    top: 40%;
+  }

@@ -1,0 +1,250 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Press Start 2P', cursive;
+}
+
+canvas {
+  width: 800px;
+  height: 600px;
+  box-shadow: 0 0 20px rgba(238, 233, 224, 0.3);
+  border: 2px solid #a0a0a0;
+  border-radius: 5px;
+  filter: sepia(0.3) contrast(1.1);
+  display: none;
+  z-index: 1;
+}
+
+#startButton {
+  position: absolute;
+  padding: 30px 50px;
+  font-size: 20px;
+  background: linear-gradient(45deg, #413c37, #4b443b);
+  border: 2px solid #000000;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(117, 117, 116, 0.3);
+  z-index: 2;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#startButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(107, 106, 105, 0.5);
+}
+
+#loadingScreen {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #3d3d3d;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#loadingText {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(255, 200, 100, 0.5);
+  font-family: 'Press Start 2P', cursive;
+}
+
+#progressBar {
+  width: 300px;
+  height: 20px;
+  background: #2a2a2a;
+  border: 2px solid #474441;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progressFill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(45deg, #55524f, #6b6761);
+  transition: width 0.3s ease;
+}
+
+#scrollingContainer {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  overflow: hidden;
+  z-index: 10;
+  display: none;
+}
+
+#scrollingText {
+  position: absolute;
+  white-space: nowrap;
+  color: #6b665f;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: scrollText 60s linear infinite, waveText 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes scrollText {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#mirrorContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  overflow: hidden;
+  z-index: 10;
+  display: none;
+}
+
+#mirrorText {
+  position: absolute;
+  white-space: nowrap;
+  color: #443e36;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: scaleY(-1);
+  opacity: 0.5;
+  animation: scrollText 60s linear infinite, waveText 2s ease-in-out infinite;
+  background: linear-gradient(to bottom, rgba(26, 26, 26, 0.1), rgba(26, 26, 26, 0.9));
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 64px;
+  position: absolute;
+  top: 170px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  animation: glowTitle 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 5px rgba(133, 133, 133, 0.5), 0 0 10px rgba(196, 155, 99, 0.5), 0 0 15px rgba(196, 155, 99, 0.5), 0 0 20px rgba(196, 155, 99, 0.5);
+  display: none;
+}
+
+@keyframes glowTitle {
+  from {
+    filter: hue-rotate(0deg) brightness(1);
+    transform: scale(1);
+  }
+
+  to {
+    filter: hue-rotate(30deg) brightness(1.2);
+    transform: scale(1.05);
+  }
+}
+
+#collectionLink {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  padding: 15px 25px;
+  font-size: 14px;
+  background: linear-gradient(45deg, #928d89, #000000);
+  border: 2px solid #ddd6cd;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(161, 159, 155, 0.3);
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  z-index: 2;
+}
+
+#collectionLink:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(114, 113, 110, 0.5);
+}
+
+#creatorText {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 0 0 10px rgba(119, 119, 119, 0.3);
+  z-index: 2;
+}
+span{
+    position: relative;
+    font-family: sans-serif;
+    top: 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 5rem;
+    text-shadow: 0 1px 0 #b7b7b7, 0 2px 0 #b7b7b7, 0 3px 0 #b7b7b7, 0 4px 0 #b7b7b7, 0 5px 0 #b7b7b7, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 10px rgba(0,0,0,0.5);
+    animation: bounce 0.4s ease infinite alternate;
+  }
+  
+  @keyframes bounce {
+    100% {
+      top: -20px;
+      text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc, 0 3px 0 #ccc, 0 4px 0 #ccc, 0 5px 0 #ccc, 0 6px 0 #ccc, 0 7px #ccc, 0 8px 0 #ccc, 0 9px 0 #ccc, 0 60px 30px rgba(0,0,0, 0.3) 
+    }
+  }
+  
+  h1 span:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  
+  h1 span:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  
+  h1 span:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  
+  h1 span:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  
+  h1 span:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  
+  
+  
+  Resources
