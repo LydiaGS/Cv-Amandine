@@ -33,6 +33,7 @@
     backdrop-filter: blur(10px);
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
     z-index: 100;
+    margin-left: 30px;
     }
     
     .header::before {
@@ -66,22 +67,120 @@
     
     .navbar {
         display: flex;
-        gap: 20px;
+        gap: 30px;
         list-style: none;
         transition: all 0.3s ease;
+        margin-left: 30px;
     }
-    
     .navbar a {
         color: #fff;
         text-decoration: none;
         font-size: 18px;
         transition: color 0.3s;
+        gap: 30px;
+        margin-left: 30px;
     }
     
     .navbar a:hover {
         color: #f1c7c7;
     }
+        /* Menu déroulant */
+        .déroulant {
+            position: relative;
+        }
     
+        .sous-menu {
+            display: none;
+            /* Cache le sous-menu par défaut */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    
+        .sous-menu li a {
+            padding: 10px 20px;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+    
+        .sous-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    
+        .déroulant:hover .sous-menu {
+            display: block;
+            /* Affiche le sous-menu au survol */
+        }
+    
+        /* Menu responsive */
+        #menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+        
+                /* Espacement spécifique entre "Infos", "Contact", et "Sign up" */
+                .navbar a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 18px;
+                    transition: color 0.3s;
+                    gap: 30px;
+                }
+        
+                /* Espacement spécifique entre "Infos" et "Contact" */
+                .navbar .déroulant+a {
+                    margin-left: 30px;
+                    /* Espace supplémentaire entre "Infos" et "Contact" */
+                }
+        
+                /* Espacement spécifique entre "Contact" et "Sign up" */
+                .navbar a[href="#connexion"] {
+                    margin-left: 30px;
+                    /* Espace supplémentaire entre "Contact" et "Sign up" */
+                }
+        
+                /* Hover */
+                .navbar a:hover {
+                    color: #f1c7c7;
+                }
+    
+        /* Styles mobiles */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                padding: 10px 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+    
+            .navbar.active {
+                display: flex;
+            }
+    
+            #menu-icon {
+                display: block;
+                font-size: 28px;
+                color: #fff;
+                z-index: 100;
+            }
+        }
+.navbar a i {
+    margin-right: 8px;
+    font-size: 20px;
+}
     /* Responsive styles */
     @media screen and (max-width: 768px) {
         .navbar {
